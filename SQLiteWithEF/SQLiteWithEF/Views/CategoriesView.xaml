@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SQLiteWithEF.Views.CategoriesView"
+             FlowDirection="RightToLeft"
+             BackgroundColor="Black"
+             >
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text=" الإقسام" TextColor="White" FontSize="Title" HorizontalTextAlignment="Center" Padding="0,20,0,0" />
+
+            <CollectionView ItemsSource="{ Binding categories, Mode=TwoWay}" SelectedItem="{Binding selectedItem}" SelectionMode="Single" Margin="0,50,0,0" BackgroundColor="Black">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <!--<Frame BackgroundColor="Black" BorderColor="Blue" Padding="10,10,10,10" Margin="10,10,10,10">-->
+                        <StackLayout Padding="20,10,10,0" Orientation="Horizontal" BackgroundColor="Black">
+                            <Label Text="{Binding Id}" TextColor="White" FontAttributes="Bold" HorizontalOptions="Start" FontSize="Medium" IsVisible="false" />
+                            <Label Text="{Binding Name}" TextColor="White" FontAttributes="Bold" HorizontalOptions="StartAndExpand" FontSize="Medium" />
+                        </StackLayout>
+                        <!--</Frame>-->
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Button Command="{Binding btnShowActions}" Text="إضافة قسم" BackgroundColor="Gray" TextColor="White" FontSize="Title" Margin="0,0,0,10" />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

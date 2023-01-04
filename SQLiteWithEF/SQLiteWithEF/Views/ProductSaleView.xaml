@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SQLiteWithEF.Views.ProductSaleView"
+                          FlowDirection="RightToLeft"
+             BackgroundColor="Black"
+             >
+    <ContentPage.Content>
+        <StackLayout Padding="10,25,10,0" HorizontalOptions="FillAndExpand">
+            <Label Text="{Binding Title}" TextColor="White" FontSize="Title" FontAttributes="Bold" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" />
+            <Label Text="{Binding Description}" TextColor="White" FontSize="Medium" FontAttributes="Bold" Margin="0,25,0,25" HorizontalOptions="Start" />
+            <BoxView Color="Blue" HeightRequest="7" />
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Margin="0,25,0,0">
+                <StackLayout HorizontalOptions="FillAndExpand">
+                    <Label Text="السعر" TextColor="White" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="Start"/>
+                    <Label x:Name="lblPrice" Text="{Binding Price}" TextColor="White" FontAttributes="Bold" FontSize="Medium"  HorizontalOptions="Start" HorizontalTextAlignment="Start" />
+                </StackLayout>
+                <StackLayout HorizontalOptions="FillAndExpand">
+                    <Label Text="الكمية" TextColor="White" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="Start" Grid.Column="0" Grid.Row="1" />
+                    <Label x:Name="lblCount" Text="{Binding Count}" TextColor="White" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Start" />
+                    <Stepper  x:Name="stp" Minimum="1" Maximum="100" Increment="1" Value="{Binding Count }" HorizontalOptions="Start" />
+                </StackLayout>
+                <StackLayout HorizontalOptions="FillAndExpand">
+                    <Label Text="الإجمالي" TextColor="White" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="Start" Grid.Column="0" Grid.Row="1" />
+                    <Label x:Name="lblTotal" Text="{Binding Total}" TextColor="White" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Start" />
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                <Button Command="{Binding btnAddToCard}" Text="إضافة إلى السلة" BackgroundColor="Blue" TextColor="White" FontSize="Title" HorizontalOptions="FillAndExpand" />
+                <Button Command="{Binding btnBack}" Text="رجوع" BackgroundColor="Green" TextColor="White" FontSize="Title" HorizontalOptions="FillAndExpand" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

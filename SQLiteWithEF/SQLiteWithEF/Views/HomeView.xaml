@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SQLiteWithEF.Views.HomeView"
+             FlowDirection="RightToLeft"
+             BackgroundColor="Black"
+             >
+    <ContentPage.Content>
+        <StackLayout>
+            <Button Command="{Binding btnSetting}" Text="الإعدادات" BackgroundColor="Blue" TextColor="White" HorizontalOptions="End" />
+            <BoxView Color="Green" HeightRequest="2" />
+
+            <CollectionView x:Name="cv" ItemsSource="{ Binding group, Mode=TwoWay}" IsGrouped="True" SelectedItem="{Binding selectedItem}" SelectionMode="Single" Margin="0,25,0,0" BackgroundColor="Black">
+                <CollectionView.GroupHeaderTemplate>
+                    <DataTemplate>
+                        <StackLayout BackgroundColor="DarkBlue" Padding="0,5,0,10">
+                            <BoxView Color="Black" HeightRequest="15" />
+                            <Label Text="{Binding GroupTitle}" FontSize="Title" TextColor="White" />
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.GroupHeaderTemplate>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout BackgroundColor="Navy"  Padding="20,0,0,0">
+
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                <StackLayout HorizontalOptions="FillAndExpand">
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                        <Label Text="{Binding Title}" TextColor="White" FontAttributes="Bold" HorizontalOptions="StartAndExpand" FontSize="Medium" />
+                                        <Label Text="{Binding Price}" TextColor="White" FontAttributes="Bold" HorizontalOptions="End" FontSize="Large" />
+                                    </StackLayout>
+                                    <Label Text="{Binding Description}" TextColor="White" FontAttributes="Bold" HorizontalOptions="StartAndExpand" FontSize="Medium" />
+                                    <!--<Label Text="{Binding CategoryName}" TextColor="White" FontAttributes="Bold" HorizontalOptions="Start" FontSize="Medium" />-->
+                                </StackLayout>
+                                <Frame HorizontalOptions="End" BackgroundColor="Black" HeightRequest="100" WidthRequest="100" Margin="5,5,5,5">
+                                    
+                                </Frame>
+                            </StackLayout>
+                            
+                            <BoxView Color="Black" HeightRequest="5" />
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Button Command="{Binding btn}" Text="سلة المشترايات" TextColor="White" BackgroundColor="Green" FontSize="Title" FontAttributes="Bold" IsEnabled="{Binding isEnable}" />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

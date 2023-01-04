@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SQLiteWithEF.Views.CategoryActionsView"
+             FlowDirection="RightToLeft"
+             BackgroundColor="Black"
+             NavigationPage.BackButtonTitle="رجوع"
+             >
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="Black">
+            <Label x:Name="lblTitle" Text=" إضافة قسم" TextColor="White" FontSize="Title" HorizontalTextAlignment="Center" Padding="0,20,0,0" />
+
+            <StackLayout BindingContext="{Binding category}">
+                <!--<Entry x:Name="txtId" Text="{Binding Id,Mode=TwoWay}" Placeholder="إسم الصنف" TextColor="White" PlaceholderColor="LightGreen" />-->
+                <Entry x:Name="txtName" Text="{Binding Name,Mode=TwoWay}" Placeholder="إسم القسم" TextColor="White" PlaceholderColor="LightGreen" FlowDirection="RightToLeft" HorizontalTextAlignment="Start"/>
+            </StackLayout>
+            <Label Text="{Binding lblResult}" TextColor="Red"  />
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Padding="10,10,10,10">
+                <Button x:Name="btnSave" Text="إضافة" BackgroundColor="Blue" TextColor="White" HorizontalOptions="Center" TabIndex="10" Command="{Binding btnSave}" />
+                <Button x:Name="btnDelete" Text="حذف" BackgroundColor="Red" TextColor="White" HorizontalOptions="Center" TabIndex="11" Command="{Binding btnDelete}" />
+                <Button x:Name="btnBack" Text="إلغاء" BackgroundColor="Green" TextColor="White" HorizontalOptions="Center" TabIndex="12" Command="{Binding btnBack}" />
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

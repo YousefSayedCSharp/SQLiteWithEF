@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SQLiteWithEF.Views.ProductActionsView"
+             FlowDirection="RightToLeft"
+             BackgroundColor="Black"
+             NavigationPage.BackButtonTitle="رجوع"
+             >
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="Black">
+            <Label x:Name="lblTitle" Text=" إضافة منتج" TextColor="White" FontSize="Title" HorizontalTextAlignment="Center" Padding="0,20,0,0" />
+            
+            <StackLayout>
+                <Picker ItemsSource="{Binding categories,Mode=TwoWay}" SelectedItem="{Binding selectedCategory,Mode=TwoWay}" ItemDisplayBinding="{Binding Name}" Title="إختيار تصنيف للمنتج"  BackgroundColor="Black" TextColor="White" x:Name="pic">
+                </Picker>
+                <Entry IsVisible="false" x:Name="txtId" Text="{Binding Id,Mode=TwoWay}" Placeholder="رقم المنتج" TextColor="White" PlaceholderColor="LightGreen" FlowDirection="RightToLeft" HorizontalTextAlignment="Start"/>
+                <Entry x:Name="txtTitle" Text="{Binding Title,Mode=TwoWay}" Placeholder="إسم المنتج" TextColor="White" PlaceholderColor="LightGreen" FlowDirection="RightToLeft" HorizontalTextAlignment="Start"/>
+                <Editor x:Name="txtDescription" Text="{Binding Description,Mode=TwoWay}" Placeholder="تفاصيل عن المنتج" TextColor="White" PlaceholderColor="LightGreen" FlowDirection="RightToLeft" HeightRequest="100" />
+                <Entry x:Name="txtPrice" Text="{Binding Price,Mode=TwoWay}" Placeholder="سعر المنتج" TextColor="White" PlaceholderColor="LightGreen" FlowDirection="RightToLeft" HorizontalTextAlignment="Start" Keyboard="Numeric" />
+                <Entry IsVisible="false" x:Name="txtCategoryId" Text="{Binding CategoryId,Mode=TwoWay}" Placeholder="رقم الصنف" TextColor="White" PlaceholderColor="LightGreen" FlowDirection="RightToLeft" HorizontalTextAlignment="Start" Keyboard="Numeric" />
+                <Frame BackgroundColor="Black" BorderColor="Green" HorizontalOptions="Center" WidthRequest="125" HeightRequest="125" Margin="0,20,0,0">
+                    <!--Image-->
+                </Frame>
+            </StackLayout>
+            <Label Text="{Binding lblResult}" TextColor="Red"  />
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Padding="10,10,10,10">
+                <Button x:Name="btnSave" Text="إضافة" BackgroundColor="Green" TextColor="White" HorizontalOptions="Center" TabIndex="10" Command="{Binding btnSave}" />
+                <Button x:Name="btnDelete" Text="حذف" BackgroundColor="Red" TextColor="White" HorizontalOptions="Center" TabIndex="11" Command="{Binding btnDelete}" />
+                <Button x:Name="btnBack" Text="إلغاء" BackgroundColor="Green" TextColor="White" HorizontalOptions="Center" TabIndex="12" Command="{Binding btnBack}" />
+            </StackLayout>
+        
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

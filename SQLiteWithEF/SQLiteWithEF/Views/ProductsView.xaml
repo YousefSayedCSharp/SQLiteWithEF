@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SQLiteWithEF.Views.ProductsView"
+             
+             FlowDirection="RightToLeft"
+             BackgroundColor="Black"
+             >
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text=" المنتجات" TextColor="White" FontSize="Title" HorizontalTextAlignment="Center" Padding="0,20,0,0" />
+
+            <!--<StackLayout Orientation="Horizontal">
+                <CollectionView x:Name="cvCategories" ItemsSource="{ Binding categories, Mode=TwoWay}" SelectedItem="{Binding selectedItemCategory}" SelectionMode="Single" Margin="0,50,0,0" BackgroundColor="Black">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Label Text="{Binding Name}" TextColor="White" />
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </StackLayout>-->
+
+            <CollectionView x:Name="cv" ItemsSource="{ Binding products, Mode=TwoWay}" SelectedItem="{Binding selectedItem}" SelectionMode="Single" Margin="0,50,0,0" BackgroundColor="Black">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <!--<Frame BackgroundColor="Black" BorderColor="Blue" Padding="10,10,10,10" Margin="10,10,10,10">-->
+                        <StackLayout Padding="20,10,10,0" Orientation="Horizontal" HorizontalOptions="StartAndExpand" BackgroundColor="Black">
+                            <StackLayout BackgroundColor="Black" HorizontalOptions="FillAndExpand">
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" BackgroundColor="Black">
+                                    <Label Text="{Binding Title}" TextColor="White" FontAttributes="Bold" HorizontalOptions="StartAndExpand" FontSize="Medium" />
+                                    <Label Text="{Binding Price}" TextColor="White" FontAttributes="Bold" HorizontalOptions="End" FontSize="Medium" />
+                                </StackLayout>
+                                <Label Text="{Binding Description}" TextColor="White" FontAttributes="Bold" HorizontalOptions="StartAndExpand" FontSize="Medium" />
+                                <Label Text="{Binding CategoryName}" TextColor="White" FontAttributes="Bold" HorizontalOptions="Start" FontSize="Medium" />
+                            </StackLayout>
+
+                            <Frame BackgroundColor="Black" BorderColor="Green" HorizontalOptions="End" WidthRequest="50" />
+                        </StackLayout>
+                        <!--</Frame>-->
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Button Command="{Binding btnShowActions}" Text="إضافة منتج" BackgroundColor="Gray" TextColor="White" FontSize="Title" Margin="0,0,0,10" />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

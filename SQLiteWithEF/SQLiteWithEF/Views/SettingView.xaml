@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SQLiteWithEF.Views.SettingView"
+             FlowDirection="RightToLeft"
+             BackgroundColor="Black"
+             >
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Padding="10,10,10,10">
+            <Button Command="{Binding btnCategories}" Text="إدارة الأقسام" TextColor="White" FontSize="Title" FontAttributes="Bold" BackgroundColor="Green" VerticalOptions="Center" Margin="0,0,0,10" />
+            <Button Command="{Binding btnProducts}" Text="إدارة المنتجات" TextColor="White" FontSize="Title" FontAttributes="Bold" BackgroundColor="Green" VerticalOptions="Center" Margin="0,0,0,10" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

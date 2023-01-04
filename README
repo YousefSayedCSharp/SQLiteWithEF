@@ -1,0 +1,4 @@
+# Inventory manager
+# Xamarin Forms
+# Database Entity Framework Core SQLite
+# بيع مأكولات ومقسم إلى أقسام وكل قسم يوجد أسفله المأكولات التابعة له ويوجد سلة للمشتريات ويمكن التعديل على الكمية وحذف منتج من السلة
